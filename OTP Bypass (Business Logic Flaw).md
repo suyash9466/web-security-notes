@@ -132,3 +132,12 @@ References
 - OWASP Authentication Cheat Sheet
 
 ---
+
+Disclosure Note
+
+This analysis is based on a real-world scenario for educational purposes.
+
+All sensitive information has been removed or anonymized.  
+No private data or system details are disclosed.
+
+---

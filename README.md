@@ -10,7 +10,7 @@ OTP Bypass (Business Logic Flaw)
 
 Demonstrates how improper server-side validation allows bypassing OTP verification in a booking flow.
 
- "View Writeup" (OTP Bypass (Business Logic Flaw).md)
+ "View Writeup" (OTP%20Bypass%20(Business%20Logic%20Flaw).md)
 
 ---
 

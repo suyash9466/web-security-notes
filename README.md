@@ -4,7 +4,7 @@ A collection of hands-on vulnerability writeups and learning notes.
 
 Writeups
 
-- OTP Bypass (Business Logic Flaw) → ./OTP Bypass (Business Logic).md
+- OTP Bypass (Business Logic Flaw) → ./OTP Bypass (Business Logic Flaw).md
 - IDOR (Insecure Direct Object Reference) → ./idor.md (coming soon)
 - CSRF (Cross-Site Request Forgery) → ./csrf.md (coming soon)
 

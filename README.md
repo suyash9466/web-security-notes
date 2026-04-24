@@ -59,6 +59,14 @@ Steps Performed:
 
 ---
 
+Technical Insight
+
+The server failed to validate whether the OTP was actually verified before processing the booking request.
+
+By modifying/intercepting the request, the verification step could be skipped while still receiving a successful response from the server.
+
+---
+
 Impact
 
 - Unauthorized test ride bookings
@@ -68,6 +76,20 @@ Impact
 
 Note:
 This vulnerability does not lead to full account takeover but demonstrates weak validation logic that could be critical if present in sensitive features.
+
+---
+
+Severity
+Low to Medium
+
+Reason:
+Limited direct impact (booking abuse), but indicates weak validation logic.
+
+---
+
+Real-World Risk
+
+If similar validation flaws exist in sensitive functionalities such as login or payments, the impact could escalate to account compromise or financial abuse.
 
 ---
 

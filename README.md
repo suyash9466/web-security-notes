@@ -54,7 +54,7 @@ Currently building hands-on skills and documenting my learning.
 
 Connect With Me
 
-- LinkedIn: https://linkedin.com/in/yourprofile
-- GitHub: https://github.com/yourusername
+- LinkedIn: https://www.linkedin.com/in/suyash-khare
+- GitHub: https://github.com/suyash9466
 
 ---

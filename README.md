@@ -1,10 +1,10 @@
-OTP Bypass in Test Ride Booking via Improper Server-Side Validation
+Business Logic Flaw: OTP Bypass in Test Ride Booking Flow
 
 Overview
 
 One-Time Password (OTP) is commonly used as a second layer of authentication. While the concept is secure, improper implementation—especially on the server side—can introduce vulnerabilities.
 
-In this case, I identified an OTP validation flaw in a test ride booking feature, where the verification step could be bypassed due to weak backend validation.
+In this case, an OTP validation flaw was identified in a test ride booking feature, where the verification step could be bypassed due to weak backend validation.
 
 ---
 
@@ -47,7 +47,7 @@ Proof of Concept (PoC)
 
 This video demonstrates how the OTP verification step can be bypassed.
 
-👉 Watch PoC Video:https://youtu.be/0akKAjfhnQs?si=5zn8F0x3FxPf7rA-
+👉 PoC Video: https://youtu.be/0akKAjfhnQs?si=5zn8F0x3FxPf7rA-
 
 Steps Performed:
 
@@ -61,9 +61,11 @@ Steps Performed:
 
 Technical Insight
 
-The server failed to validate whether the OTP was actually verified before processing the booking request.
+The server fails to verify whether the OTP validation step was successfully completed before processing the booking request.
 
-By modifying/intercepting the request, the verification step could be skipped while still receiving a successful response from the server.
+By intercepting and modifying the request, the verification step can be skipped while still receiving a valid response from the server.
+
+This indicates improper server-side validation and reliance on the request flow rather than actual verification status.
 
 ---
 
@@ -75,21 +77,24 @@ Impact
 - Business logic flaw affecting system integrity
 
 Note:
-This vulnerability does not lead to full account takeover but demonstrates weak validation logic that could be critical if present in sensitive features.
+This does not lead to full account takeover but highlights weak validation logic.
 
 ---
 
 Severity
+
 Low to Medium
 
 Reason:
-Limited direct impact (booking abuse), but indicates weak validation logic.
+Limited direct impact (booking abuse), but indicates weak backend validation logic.
 
 ---
 
 Real-World Risk
 
-If similar validation flaws exist in sensitive functionalities such as login or payments, the impact could escalate to account compromise or financial abuse.
+While the direct impact is limited, this vulnerability highlights weak server-side validation.
+
+If similar logic flaws exist in sensitive functionalities such as login, payments, or account recovery, the impact could escalate to account compromise or financial abuse.
 
 ---
 
@@ -115,13 +120,9 @@ Tools Used
 
 Security Insight
 
-Even though the direct impact is limited, this vulnerability highlights a deeper issue:
+Even low-impact vulnerabilities can reveal deeper architectural issues.
 
-Improper server-side validation.
-
-If similar logic flaws exist in critical functionalities (such as login, payments, or account recovery), they could lead to severe security risks.
-
-Fixing low-impact vulnerabilities early helps prevent larger security failures.
+In this case, improper server-side validation allowed bypassing a critical verification step. Identifying and fixing such flaws early helps prevent more severe vulnerabilities in sensitive parts of the application.
 
 ---
 

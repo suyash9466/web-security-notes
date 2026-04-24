@@ -1,23 +1,60 @@
 Web Security Notes (VAPT)
 
-A collection of hands-on vulnerability writeups and learning notes.
+Welcome to my cybersecurity learning repository where I document real-world vulnerabilities, practical testing, and security concepts.
 
-Writeups
+---
 
-- OTP Bypass (Business Logic Flaw) → ./OTP Bypass (Business Logic Flaw).md
-- IDOR (Insecure Direct Object Reference) → ./idor.md (coming soon)
-- CSRF (Cross-Site Request Forgery) → ./csrf.md (coming soon)
+Vulnerability Writeups
+
+OTP Bypass (Business Logic Flaw)
+
+Demonstrates how improper server-side validation allows bypassing OTP verification in a booking flow.
+
+ "View Writeup" (OTP Bypass (Business Logic Flaw).md)
+
+---
+
+IDOR (Insecure Direct Object Reference)
+
+Access control vulnerability allowing unauthorized access to other users' data.
+
+ Coming Soon
+
+---
+
+CSRF (Cross-Site Request Forgery)
+
+Exploiting authenticated users to perform unintended actions.
+
+ Coming Soon
+
+---
 
 Focus Areas
 
-- Authentication flaws
-- Access control issues
-- Business logic vulnerabilities
+- Authentication vulnerabilities
+- Access control flaws
+- Business logic issues
 
-Tools
+---
+
+Tools Used
 
 - Burp Suite
 
 ---
 
-Actively learning and open to opportunities in VAPT / Security Analyst roles.
+About Me
+
+I am a cybersecurity enthusiast focused on VAPT and web application security.
+
+Currently building hands-on skills and documenting my learning.
+
+---
+
+Connect With Me
+
+- LinkedIn: https://linkedin.com/in/yourprofile
+- GitHub: https://github.com/yourusername
+
+---

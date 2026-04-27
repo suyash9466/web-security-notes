@@ -19,7 +19,7 @@ CSRF (Cross-Site Request Forgery)
 
 Exploiting authenticated users to perform unintended actions.
 
-    [View Writeup](./CSRF-Password-Reset-Account-Takeover.md)
+  [View Writeup](./CSRF-Password-Reset-Account-Takeover.md)
 
 ---
 

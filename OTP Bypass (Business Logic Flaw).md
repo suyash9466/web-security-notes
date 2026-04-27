@@ -47,7 +47,7 @@ Proof of Concept (PoC)
 
 This video demonstrates how the OTP verification step can be bypassed.
 
-👉 PoC Video: https://youtu.be/0akKAjfhnQs?si=5zn8F0x3FxPf7rA-
+[Watch Full PoC](https://youtu.be/0akKAjfhnQs?si=ugOe1tg50uo9AyLB)
 
 Steps Performed:
 

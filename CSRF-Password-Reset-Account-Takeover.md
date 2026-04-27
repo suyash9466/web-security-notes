@@ -3,8 +3,10 @@ Cross-Site Request Forgery (CSRF) Password Reset Account Takeover
 ---
 
 Vulnerability Summary
+
 The application is vulnerable to Cross-Site Request Forgery (CSRF) in the password reset functionality.
 The endpoint:
+
 https://xyz/app/profile/reset_password
 
 does not implement any CSRF protection mechanisms such as anti-CSRF tokens or request validation. The request is processed solely based on the victim’s authenticated session.
@@ -14,25 +16,31 @@ This allows an attacker to change a victim’s password without their knowledge.
 ---
 
 Conceptual View
+
 CSRF exploits the trust a web application places in a user’s browser.
+
 - Victim is authenticated
 - Attacker forces a request
 - Server trusts it executes action
+  
 Here, the sensitive action is password reset, making this vulnerability critical.
 
 ---
 
 Impact
-- Full Account Takeover (ATO)
+
+- Full Account Takeover (ATO)  
 Attacker can:
  - Change victim password
  - Lock out legitimate user
  - Gain persistent unauthorized access
+   
 Severity: High / Critical
 
 ---
 
 Root Cause
+
 - No CSRF token implemented
 - No Origin/Referer validation
 - Sensitive functionality accessible via simple POST request
@@ -41,6 +49,7 @@ Root Cause
 ---
 
 Steps to Reproduce
+
 1. Login to the application using a valid account.
 2. Keep the session active.
 3. Create a malicious HTML file with an auto-submitting form.
@@ -54,6 +63,7 @@ Steps to Reproduce
 ---
 
 Proof of Concept (PoC)
+
 [
 <html>
   <body>
@@ -72,16 +82,20 @@ Proof of Concept (PoC)
 ---
 
 Attack Scenario
+
 An attacker hosts a malicious HTML page and tricks the victim into visiting it (via phishing or social engineering).
+
 Since the victim is already authenticated:
 - Browser automatically includes session cookies
 - Request is treated as legitimate
 - Password is changed silently
+  
 No user interaction is required.
 
 ---
 
 Video Demonstration
+
 The following video demonstrates the full exploitation flow:
 - Victim logged in
 - Malicious HTML execution
@@ -93,6 +107,7 @@ The following video demonstrates the full exploitation flow:
 ---
 
 Mitigation / Fix
+
 To prevent CSRF attacks:
 - Implement anti-CSRF tokens (synchronizer token pattern)
 - Enforce SameSite cookies (Strict/Lax)
@@ -103,5 +118,7 @@ To prevent CSRF attacks:
 ---
 
 References
+
 OWASP CSRF Prevention Cheat Sheet
+
 OWASP Top 10 – A01/A05 (Broken Access Control / Security Misconfiguration context)

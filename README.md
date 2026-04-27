@@ -14,19 +14,22 @@ Demonstrates how improper server-side validation allows bypassing OTP verificati
 
 ---
 
+
+CSRF (Cross-Site Request Forgery)
+
+Exploiting authenticated users to perform unintended actions.
+
+    [View Writeup](./CSRF-Password-Reset-Account-Takeover.md)
+
+---
+
 IDOR (Insecure Direct Object Reference)
 
 Access control vulnerability allowing unauthorized access to other users' data.
 
  Coming Soon
 
----
 
-CSRF (Cross-Site Request Forgery)
-
-Exploiting authenticated users to perform unintended actions.
-
- Coming Soon
 
 ---
 

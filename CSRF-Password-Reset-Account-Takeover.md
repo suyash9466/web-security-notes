@@ -54,7 +54,7 @@ Steps to Reproduce
 ---
 
 Proof of Concept (PoC)
-
+[
 <html>
   <body>
     <iframe name="hiddenFrame" style="display:none;"></iframe>
@@ -68,7 +68,7 @@ Proof of Concept (PoC)
     </script>
   </body>
 </html>
-
+]
 ---
 
 Attack Scenario
@@ -87,6 +87,7 @@ The following video demonstrates the full exploitation flow:
 - Malicious HTML execution
 - Password changed without consent
 - Successful login using attacker-defined password
+  
    [Watch Full PoC](https://youtu.be/NA5vm83g7X0?si=39rCPqoK81faXBM4)
 
 ---

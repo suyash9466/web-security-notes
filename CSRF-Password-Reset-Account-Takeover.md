@@ -6,6 +6,7 @@ Vulnerability Summary
 The application is vulnerable to Cross-Site Request Forgery (CSRF) in the password reset functionality.
 The endpoint:
 https://xyz/app/profile/reset_password
+
 does not implement any CSRF protection mechanisms such as anti-CSRF tokens or request validation. The request is processed solely based on the victim’s authenticated session.
 This allows an attacker to change a victim’s password without their knowledge.
 

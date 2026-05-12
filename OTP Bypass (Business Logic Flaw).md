@@ -1,6 +1,8 @@
-Business Logic Flaw: OTP Bypass in Test Ride Booking Flow
+# Business Logic Flaw: OTP Bypass in Test Ride Booking Flow
 
-Overview
+---
+
+## Overview
 
 One-Time Password (OTP) is commonly used as a second layer of authentication. While the concept is secure, improper implementation—especially on the server side—can introduce vulnerabilities.
 
@@ -8,7 +10,7 @@ In this case, an OTP validation flaw was identified in a test ride booking featu
 
 ---
 
-Vulnerability Description
+## Vulnerability Description
 
 The vulnerability exists because the server does not strictly validate the OTP against a user session and improperly trusts the request flow.
 
@@ -21,9 +23,9 @@ Key Issues:
 
 ---
 
-Authentication Flow Analysis
+## Authentication Flow Analysis
 
-Expected Secure Flow:
+### Expected Secure Flow:
 
 1. User initiates test ride booking
 2. Server generates OTP and binds it to session
@@ -32,7 +34,7 @@ Expected Secure Flow:
 
 ---
 
-Vulnerable Flow:
+### Vulnerable Flow:
 
 1. User initiates booking and receives OTP
 2. OTP is generated but not strictly validated
@@ -43,13 +45,13 @@ Vulnerable Flow:
 
 ---
 
-Proof of Concept (PoC)
+## Proof of Concept (PoC)
 
 This video demonstrates how the OTP verification step can be bypassed.
 
 [Watch Full PoC](https://youtu.be/0akKAjfhnQs?si=ugOe1tg50uo9AyLB)
 
-Steps Performed:
+### Steps Performed:
 
 1. Intercepted OTP verification request using Burp Suite
 2. Analyzed request/response behavior
@@ -59,7 +61,7 @@ Steps Performed:
 
 ---
 
-Technical Insight
+## Technical Insight
 
 The server fails to verify whether the OTP validation step was successfully completed before processing the booking request.
 
@@ -69,7 +71,7 @@ This indicates improper server-side validation and reliance on the request flow 
 
 ---
 
-Impact
+## Impact
 
 - Unauthorized test ride bookings
 - Abuse of booking functionality
@@ -81,7 +83,7 @@ This does not lead to full account takeover but highlights weak validation logic
 
 ---
 
-Severity
+## Severity
 
 Low to Medium
 
@@ -90,7 +92,7 @@ Limited direct impact (booking abuse), but indicates weak backend validation log
 
 ---
 
-Real-World Risk
+## Real-World Risk
 
 While the direct impact is limited, this vulnerability highlights weak server-side validation.
 
@@ -98,7 +100,7 @@ If similar logic flaws exist in sensitive functionalities such as login, payment
 
 ---
 
-Mitigation / Fix
+## Mitigation / Fix
 
 To prevent such issues:
 
@@ -112,13 +114,13 @@ To prevent such issues:
 
 ---
 
-Tools Used
+## Tools Used
 
 - Burp Suite (for intercepting and modifying HTTP requests)
 
 ---
 
-Security Insight
+## Security Insight
 
 Even low-impact vulnerabilities can reveal deeper architectural issues.
 
@@ -126,14 +128,14 @@ In this case, improper server-side validation allowed bypassing a critical verif
 
 ---
 
-References
+## References
 
 - OWASP Top 10 – Broken Authentication
 - OWASP Authentication Cheat Sheet
 
 ---
 
-Disclosure Note
+## Disclosure Note
 
 This analysis is based on a real-world scenario for educational purposes.
 

@@ -23,16 +23,6 @@ Exploiting authenticated users to perform unintended actions.
 
 ---
 
-### IDOR (Insecure Direct Object Reference)
-
-Access control vulnerability allowing unauthorized access to other users' data.
-
- Coming Soon
-
-
-
----
-
 ## Focus Areas
 
 - Authentication vulnerabilities

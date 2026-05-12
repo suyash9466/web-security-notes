@@ -1,13 +1,15 @@
-Cross-Site Request Forgery (CSRF) Password Reset Account Takeover
+# Cross-Site Request Forgery (CSRF) Password Reset Account Takeover
 
 ---
 
-Vulnerability Summary
+## Vulnerability Summary
 
-The application is vulnerable to Cross-Site Request Forgery (CSRF) in the password reset functionality.
+The application is vulnerable to Cross-Site Request Forgery (CSRF) in the password reset functionality.  
 The endpoint:
 
+```http
 https://xyz/app/profile/reset_password
+```
 
 does not implement any CSRF protection mechanisms such as anti-CSRF tokens or request validation. The request is processed solely based on the victim’s authenticated session.
 
@@ -15,7 +17,7 @@ This allows an attacker to change a victim’s password without their knowledge.
 
 ---
 
-Conceptual View
+## Conceptual View
 
 CSRF exploits the trust a web application places in a user’s browser.
 
@@ -27,7 +29,7 @@ Here, the sensitive action is password reset, making this vulnerability critical
 
 ---
 
-Impact
+## Impact
 
 - Full Account Takeover (ATO)  
 Attacker can:
@@ -39,7 +41,7 @@ Severity: High / Critical
 
 ---
 
-Root Cause
+## Root Cause
 
 - No CSRF token implemented
 - No Origin/Referer validation
@@ -48,7 +50,7 @@ Root Cause
 
 ---
 
-Steps to Reproduce
+## Steps to Reproduce
 
 1. Login to the application using a valid account.
 2. Keep the session active.
@@ -62,7 +64,7 @@ Steps to Reproduce
 
 ---
 
-Proof of Concept (PoC)
+## Proof of Concept (PoC)
 
 ```html
 <html>
@@ -82,7 +84,7 @@ Proof of Concept (PoC)
 
 ---
 
-Attack Scenario
+## Attack Scenario
 
 An attacker hosts a malicious HTML page and tricks the victim into visiting it (via phishing or social engineering).
 
@@ -95,7 +97,7 @@ No user interaction is required.
 
 ---
 
-Video Demonstration
+## Video Demonstration
 
 The following video demonstrates the full exploitation flow:
 - Victim logged in
@@ -103,11 +105,11 @@ The following video demonstrates the full exploitation flow:
 - Password changed without consent
 - Successful login using attacker-defined password
   
-   [Watch Full PoC](https://youtu.be/NA5vm83g7X0?si=39rCPqoK81faXBM4)
+[Watch Full PoC](https://youtu.be/NA5vm83g7X0?si=39rCPqoK81faXBM4)
 
 ---
 
-Mitigation / Fix
+## Mitigation / Fix
 
 To prevent CSRF attacks:
 - Implement anti-CSRF tokens (synchronizer token pattern)
@@ -118,7 +120,7 @@ To prevent CSRF attacks:
 
 ---
 
-References
+## References
 
 OWASP CSRF Prevention Cheat Sheet
 
